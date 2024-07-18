@@ -1,4 +1,25 @@
+import { useState, useEffect } from "react";
+
 const DatePickerComponent = () => {
+  const [input1, setInput1] = useState(Number);
+  const [input2, setInput2] = useState(Number);
+  const [input3, setInput3] = useState(Number);
+
+  function handleInput1(e: any) {
+    //day
+    setInput1(e.target.value);
+  }
+
+  function handleInput2(e: any) {
+    //month
+    setInput2(e.target.value);
+  }
+
+  function handleInput3(e: any) {
+    //year
+    setInput3(e.target.value);
+  }
+
   const inputStyle =
     "border-black border-2 border-solid rounded-lg w-full h-full";
 
@@ -13,9 +34,24 @@ const DatePickerComponent = () => {
             <h1 className="float-start pr-2">day</h1>
             <h1 className="float-start pr-2">month</h1>
             <h1 className="float-start pr-2">year</h1>
-            <input type="number" className={inputStyle}></input>
-            <input type="number" className={inputStyle}></input>
-            <input type="number" className={inputStyle}></input>
+            <input
+              type="number"
+              className={inputStyle}
+              value={input1}
+              onChange={handleInput1}
+            ></input>
+            <input
+              type="number"
+              className={inputStyle}
+              value={input2}
+              onChange={handleInput2}
+            ></input>
+            <input
+              type="number"
+              className={inputStyle}
+              value={input3}
+              onChange={handleInput3}
+            ></input>
           </div>
           <div className="justify-self-end h-max pt-10">
             <div className="border-black border-2 border-solid rounded-lg">
